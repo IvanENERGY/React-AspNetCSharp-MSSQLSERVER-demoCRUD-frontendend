@@ -148,8 +148,21 @@ File saving
             }
         }
 </pre>
+<h2>Populate List of departments into Spinner</h2>
+<ol>
+<li>Set states for departments and the selection</li>
+<pre>
+const [departments,setDepartments]=useState([]);
+const [department,setDepartment]=useState(0);
+</pre>
+<li>Set up spinner</li>
 
-
+<pre>
+&lt;select className="form-select" value={department} onChange={(event)=>setDepartment(event.target.value)}>
+{departments.map(dep=>&lt;option key={dep.DepartmentId}>{dep.DepartmentName}&lt;/option>)}
+&lt;/select>
+</pre>
+</ol>
 
 
 
