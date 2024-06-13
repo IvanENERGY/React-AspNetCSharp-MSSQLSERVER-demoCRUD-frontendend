@@ -5,12 +5,9 @@ https://www.youtube.com/watch?v=kJKb89BkwGo
 
 <h2>Bootstrap Setup</h2>
 <pre>
-Inside head
------------------
+Inside head<hr>
 &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
-
-last line of body
-----------------------
+last line of body<hr>
 &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">&lt;/script>
 </pre>
 <h2>Bootstrap Icon</h2>
@@ -69,6 +66,7 @@ const [departmentOriginal,setdepartmentOriginal]=useState([]);
 </pre>
 </ol>
 <h2>Sorting Displayed List</h2>
+<ol>
 <li>Setup asc+dsc button for sorting one props</li>
 <pre>
 &lt;button type="button" className="btn btn-light" onClick={()=>sortResult('DepartmentId',true)}>
@@ -88,15 +86,15 @@ const [departmentOriginal,setdepartmentOriginal]=useState([]);
 const sortResult=(prop,asc)=>{
     var sortedData=[...departmentOriginal].sort(function(a,b){  //Must use [... ]generate copy of old array; otherwise it would just be the same array and setDepartment NOT working
         if(asc){
-            return (a[prop]>b[prop])?1:((a[prop]<b[prop])?-1:0);
-        }else{
-            return (b[prop]>a[prop])?1:((b[prop]<a[prop])?-1:0);
+            return (a[prop]>b[prop])?1:((a[prop]< b[prop])?-1:0)}
+            else{
+            return (b[prop]>a[prop])?1:((b[prop]< a[prop])?-1:0);
         }
     });
     setDepartmentOnDisplay(sortedData);
 }
 </pre>
-
+</ol>
 <h2>
 File saving 
 </h2>
