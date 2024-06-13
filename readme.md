@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=kJKb89BkwGo
 Inside head
 <p>-------------------------------------------------------------</p>
 &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
+
+
 last line of body
 <p>-------------------------------------------------------------</p>
 &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">&lt;/script>
@@ -101,6 +103,18 @@ const sortResult=(prop,asc)=>{
 File saving 
 </h2>
 <ol>
+<pre>
+    const imageUpload=(e)=>{
+        e.preventDefault();
+        const formData=new FormData();
+        formData.append("file",e.target.files[0],e.target.files[0].name);
+        axios.post(`${variables.API_URL}employee/savefile`,formData)
+        .then((response)=>{
+            setPhotoFileName(response.data);
+         })
+         .catch((err)=>{alert(err)});
+    }
+</pre>
 <li>Fileonchange</li>
 <li>call saveFile Api (Uploading)</li>
 <li>server respond filepath</li>
@@ -109,7 +123,31 @@ File saving
 <li> imgview updated accordingly</li>
 <li> use the refreshed filepath state for db record update/create (if needed)</li>
 </ol>
+<p>Inside the route for /api/Employee in asp.net:</p>
+<pre>
+        [Route("SaveFile")]
+        [HttpPost]
+        public JsonResult SaveFile()
+        {
+            try
+            {
+                var httpRequest = Request.Form;
+                var postedFile = httpRequest.Files[0];
+                string filename = postedFile.FileName;
+                var physicalPath = _env.ContentRootPath + "/Photos/" + filename;
 
+                using (var stream= new FileStream(physicalPath,FileMode.Create))
+                {
+                    postedFile.CopyTo(stream);
+                }
+                return new JsonResult(filename);
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult("annoymous.png");
+            }
+        }
+</pre>
 
 
 
