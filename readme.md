@@ -4,14 +4,16 @@ React Part
 <h1>Learning Summary on React</h1>
 
 <h2>Bootstrap Setup</h2>
-<pre>
+
 Inside head
 <p>-------------------------------------------------------------</p>
+<pre>
 &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
-
+</pre>
 
 last line of body
 <p>-------------------------------------------------------------</p>
+<pre>
 &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">&lt;/script>
 </pre>
 <h2>Bootstrap Icon</h2>
