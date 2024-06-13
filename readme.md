@@ -1,5 +1,5 @@
 React Part
-https://www.youtube.com/watch?v=kJKb89BkwGo
+
 <hr>
 <h1>Learning Summary on React</h1>
 
