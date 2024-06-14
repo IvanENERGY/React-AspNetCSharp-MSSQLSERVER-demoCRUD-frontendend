@@ -1,5 +1,7 @@
-React Part
-
+<p>This is CRUD demo full-stack application built using React,ASP.net(C#)
+SQL server. </p>
+<p><strong>Frontend: React (This Repo)</strong></p>
+<p>Backend: SQL server & API written in C# (https://github.com/IvanENERGY/REACT-ASPNETC-MSSQLSERVER-demoCRUD-backend)  </p>
 <hr>
 <h1>Learning Summary on React</h1>
 

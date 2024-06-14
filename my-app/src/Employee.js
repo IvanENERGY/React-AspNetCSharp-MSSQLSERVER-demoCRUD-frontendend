@@ -156,7 +156,7 @@ export const Employee=()=>{
                             </div>
                             
                             <div className="modal-body">
-                                {/* <div className="d-flex flex-row bd-highlight mb-3">
+                                <div className="d-flex flex-row bd-highlight mb-3">
                                     <div className="p-2 w-50 bd-highlight">
                                         <div className="input-group mb-3">
                                             <span className="input-group-text">EmpName</span>
@@ -190,7 +190,7 @@ export const Employee=()=>{
                                 {employeeId!==0?
                                 <button type="button" className="btn btn-primary float-start" onClick={updateRequest}>Update</button>:
                                 null
-                                } */}
+                                }
                                 
                             </div>
                         </div>
